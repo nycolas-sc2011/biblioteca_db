@@ -12,3 +12,4 @@ def cadastrar_autor():
     print("Autor cadastrado com sucesso!")
 
     conn.close()
+    '''código pronto'''

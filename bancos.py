@@ -37,3 +37,4 @@ tabela_emprestimos_livros()
 
 conn.commit()
 conn.close()
+'''código pronto'''

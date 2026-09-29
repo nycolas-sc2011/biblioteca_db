@@ -28,4 +28,4 @@ def cadastrar_livro():
     print("Livro cadastrado com sucesso!")
 
     conn.close()
-
+'''código pronto'''

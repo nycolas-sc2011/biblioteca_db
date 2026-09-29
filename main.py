@@ -74,4 +74,4 @@ Número completamente problemático, escolha outro.
     else:
         print("Opção inválida. Tente novamente.")
 
-
+'''código pronto'''

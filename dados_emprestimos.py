@@ -22,3 +22,4 @@ def cadastrar_emprestimo():
     print("Empréstimo cadastrado com sucesso!")
 
     conn.close()
+'''código pronto'''

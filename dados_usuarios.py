@@ -11,3 +11,4 @@ def cadastrar_usuario():
     print("Usuário cadastrado com sucesso!")
 
     conn.close()
+    '''código pronto'''

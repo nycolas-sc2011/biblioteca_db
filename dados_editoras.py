@@ -11,3 +11,4 @@ def cadastrar_editora():
     print("Editora cadastrada com sucesso!")
 
     conn.close()
+    '''código pronto'''

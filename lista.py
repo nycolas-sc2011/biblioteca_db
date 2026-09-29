@@ -130,3 +130,5 @@ def listas_todas():
     listas_emprestimos()
     print("\nLista de empréstimos de livros:")
     listas_emprestimos_livros()
+
+'''código pronto'''

@@ -19,3 +19,4 @@ def cadastrar_emprestimo_livro():
     print("Empréstimo de livro cadastrado com sucesso!")
 
     conn.close()
+'''código pronto'''
