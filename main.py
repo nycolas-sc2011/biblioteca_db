@@ -27,9 +27,21 @@ while True:
     print("14. Sair")
 
     opcao = input("Digite o número da opção desejada: ")
+
     if opcao == '67':
-        print("Número completamente problemático, escolha outro.")
+        print("""
+   666666    7777777777
+  66    66          77
+ 66                77
+ 66666666         77
+ 66     66       77
+ 66     66      77
+  666666       77
+-------
+Número completamente problemático, escolha outro.
+    """)
         continue
+
     elif opcao == '1':
         cadastrar_usuario()
     elif opcao == '2':
@@ -57,20 +69,9 @@ while True:
     elif opcao == '13':
         listas_todas()
     elif opcao == '14':
+        print("Tchau! Até breve!")
         break
     else:
         print("Opção inválida. Tente novamente.")
 
-cadastrar_usuario()
-cadastrar_livro()
-cadastrar_emprestimo()
-cadastrar_emprestimo_livro()
-cadastrar_autor()
-cadastrar_editora()
-listas_usuarios()
-listas_editoras()
-listas_emprestimos()
-listas_emprestimos_livros()
-listas_autores()
-listas_livros()
-listas_todas()
+
