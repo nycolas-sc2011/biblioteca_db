@@ -1,13 +1,13 @@
 import sqlite3
 
-conn = sqlite3.connect("biblioteca.db")
+def cadastrar_editora():
+    conn = sqlite3.connect("biblioteca.db")
+    cursor = conn.cursor()
+    
+    nome = input("Digite o nome da editora: ")
 
-conn.execute("DROP TABLE IF EXISTS editoras")
+    cursor.execute("INSERT INTO editoras (nome) VALUES (?)", (nome,))
+    conn.commit()
+    print("Editora cadastrada com sucesso!")
 
-conn.execute("CREATE TABLE editoras (id INTEGER PRIMARY KEY AUTOINCREMENT \
-             , nome TEXT NOT NULL)")
-
-conn.executemany("INSERT INTO editoras(nome) VALUES(?)",
-                 [("Moderna",), ("Nova",)])
-
-conn.commit()
+    conn.close()

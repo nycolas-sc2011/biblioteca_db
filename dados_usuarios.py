@@ -1,13 +1,13 @@
 import sqlite3
 
-conn = sqlite3.connect("biblioteca.db")
+def cadastrar_usuario():
+    conn = sqlite3.connect("biblioteca.db")
+    cursor = conn.cursor()
+    
+    nome = input("Digite o nome do usuário: ")
 
-conn.execute("DROP TABLE IF EXISTS usuarios")
+    cursor.execute("INSERT INTO usuarios (nome) VALUES (?)", (nome,))
+    conn.commit()
+    print("Usuário cadastrado com sucesso!")
 
-conn.execute("CREATE TABLE usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT \
-             , nome TEXT NOT NULL)")
-
-conn.executemany("INSERT INTO usuarios(nome) VALUES(?)",
-                 [("Bob",), ("Sam",), ("Frodo",)])
-
-conn.commit()
+    conn.close()

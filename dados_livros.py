@@ -1,25 +1,27 @@
 import sqlite3
 
-conn = sqlite3.connect("biblioteca.db")
+def cadastrar_livro():
+    conn = sqlite3.connect("biblioteca.db")
+    cursor = conn.cursor()
 
-conn.execute("DROP TABLE IF EXISTS livros")
+    titulo = input("Digite o título do livro: ")
+    autor_id = int(input("Digite o ID do autor: "))
+    editora_id = int(input("Digite o ID da editora: "))
+    ano_publicacao = int(input("Digite o ano de publicação: "))
+    edicao = int(input("Digite a edição: "))
+    disponivel = int(input("Digite 1 se o livro estiver disponível ou 0 se não estiver: "))
+    if disponivel == 1:
+        disponivel = True
+    elif disponivel == 0:
+        disponivel = False
+    else:
+        print("Valor ínvalido! Digite 1 para disponível ou 0 para indisponível.")
+        return
 
-sql_create = """CREATE TABLE livros (id INTEGER PRIMARY KEY AUTOINCREMENT, 
-            titulo TEXT NOT NULL, autor_id INTEGER REFERENCES autores(id), 
-            editora_id INTEGER REFERENCES editoras(id),
-            ano_publicacao INTEGER,
-            edicao INTEGER,
-            disponivel BOOLEAN NOT NULL DEFAULT 1 CHECK (disponivel IN(0,1))
-            )"""
+    cursor.execute("INSERT INTO livros (titulo, autor_id, editora_id, ano_publicacao, edicao, disponivel) VALUES (?, ?, ?, ?, ?, ?)", (titulo, autor_id, editora_id, ano_publicacao, edicao, disponivel)  )
 
-conn.execute(sql_create)
+    conn.commit()
+    print("Livro cadastrado com sucesso!")
 
-sql_insert = """INSERT INTO livros(titulo, autor_id, editora_id, ano_publicacao, edicao,
-    disponivel) VALUES(?, ?, ?, ?, ?, ?)"""
- 
+    conn.close()
 
-conn.executemany(sql_insert, 
-    [("Java como programar", 1, 2, 2000, 2, 1), 
-     ("Python para iniciantes", 2, 1, 2020, 1, 0)])
-
-conn.commit()
