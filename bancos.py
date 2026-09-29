@@ -14,7 +14,7 @@ def tabela_livros():
     conn.execute("CREATE TABLE IF NOT EXISTS livros (id INTEGER PRIMARY KEY AUTOINCREMENT, titulo TEXT NOT NULL, autor_id INTEGER REFERENCES autores(id), editora_id INTEGER REFERENCES editoras(id), ano_publicacao INTEGER, edicao INTEGER, disponivel BOOLEAN)")
 
 def tabela_emprestimos():
-    conn.execute("CREATE TABLE if not exists emprestimos (id INTEGER PRIMARY KEY AUTOINCREMENT, usuario_id INTEGER REFERENCES usuarios(id), data DATE DEFAULT CURRENT_DATE)")
+    conn.execute("CREATE TABLE if not exists emprestimos (id INTEGER PRIMARY KEY AUTOINCREMENT, usuario_id INTEGER REFERENCES usuarios(id), data_emprestimo DATE DEFAULT CURRENT_DATE)")
 
 def tabela_emprestimos_livros():
     conn.execute("""

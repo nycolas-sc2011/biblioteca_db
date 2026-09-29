@@ -27,7 +27,10 @@ while True:
     print("14. Sair")
 
     opcao = input("Digite o número da opção desejada: ")
-    if opcao == '1':
+    if opcao == '67':
+        print("Número completamente problemático, escolha outro.")
+        continue
+    elif opcao == '1':
         cadastrar_usuario()
     elif opcao == '2':
         cadastrar_livro()
