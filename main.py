@@ -9,8 +9,6 @@ from lista import listas_usuarios, listas_editoras, listas_emprestimos, listas_e
 
 
 while True:
-    print("\n== mEnU dE oPçÕeS==")
-    print("Escolha sua opção:")
     print("1. Cadastrar usuário")
     print("2. Cadastrar livro")
     print("3. Cadastrar empréstimo")
@@ -28,7 +26,28 @@ while True:
 
     opcao = input("Digite o número da opção desejada: ")
 
-    if opcao == '67':
+    if opcao.lower() == 'oompa loompas':
+        print("""\nOompa, tão loompas
+Oompa loompas delicados
+que acabaram de raptar
+as crianças indefesas
+dentro daquele lugar
+
+Pra fazer um refrezinho
+vale a experiência
+eles torram o seu dinheiro
+e fazem você de besta
+
+"Preciso sair daqui!
+Não quero virar refri!"
+Foge dessa Deep Web
+antes que ele te pegue
+
+e então ache o portão
+(*não tem portão)""")
+        continue
+
+    elif opcao == '67':
         print("""
    666666    7777777777
   66    66          77
@@ -69,9 +88,9 @@ Número completamente problemático, escolha outro.
     elif opcao == '13':
         listas_todas()
     elif opcao == '14':
-        print("Tchau! Até breve!")
+        print("Tenha um ótimo dia! Até breve!")
         break
     else:
-        print("Opção inválida. Tente novamente.")
+        print("Opção inválida. Por favor, digite um número de 1 a 14.")
 
 '''código pronto'''
